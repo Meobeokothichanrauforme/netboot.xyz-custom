@@ -1,12 +1,25 @@
 #!ipxe
-###
-### netboot.xyz-custom menu
-###
 
-:start
-echo Hello world!
-sleep 10
-goto custom_exit
+:menu
+clear
+echo
+echo  -----------------------------
+echo  |                           |
+echo  |  VietNam Is Best Kali DauBuoi |
+echo  |                           |
+echo  -----------------------------
+echo
+echo  ███████████████████████████
+echo  ███████████████████████████
+echo  ███████████████████████████
+echo  ██████████████████████████
+echo  ████████████★████████████
+echo  ██████████████████████████
+echo  ███████████████████████████
+echo  ███████████████████████████
+echo  ███████████████████████████
+echo
+echo  Nhấn phím bất kỳ để khởi động...
+prompt
 
-:custom_exit
-exit 0
+boot
