@@ -1,25 +1,41 @@
 #!ipxe
+set red 0x0c
+set green 0x0a
+set yellow 0x0e
+set cyan 0x0b
+set white 0x0f
 
-:menu
+console --x 80 --y 25 --picture none
+colour --rgb 0x000000 0xffffff
 clear
-echo
-echo  -----------------------------
-echo  |                           |
-echo  |  VietNam Is Best Kali DauBuoi |
-echo  |                           |
-echo  -----------------------------
-echo
-echo  ███████████████████████████
-echo  ███████████████████████████
-echo  ███████████████████████████
-echo  ██████████████████████████
-echo  ████████████★████████████
-echo  ██████████████████████████
-echo  ███████████████████████████
-echo  ███████████████████████████
-echo  ███████████████████████████
-echo
-echo  Nhấn phím bất kỳ để khởi động...
-prompt
 
+echo -e ${cyan}==============================
+echo -e ${yellow}   iPXE Boot Menu (Display Only)
+echo -e ${cyan}==============================
+echo
+echo -e ${green} 1. System Information
+echo -e ${green} 2. Help & Instructions
+echo -e ${red} 3. Exit to BIOS
+echo
+echo -e ${white} Select an option:
+
+choose target && goto ${target}
+
+:1
+echo -e ${yellow}BIOS Vendor: American Megatrends
+echo CPU: Intel Core i7-4710HQ @ 2.50GHz
+echo RAM: 16GB
+echo Serial Number: EAN0WU36322143B
+echo -e ${white}Press any key to return...
+prompt
+goto start
+
+:2
+echo -e ${yellow}This is a display-only menu for iPXE.
+echo No boot options are available.
+echo -e ${white}Press any key to return...
+prompt
+goto start
+
+:3
 exit
