@@ -22,4 +22,4 @@ echo
 echo  Nhấn phím bất kỳ để khởi động...
 prompt
 
-boot
+exit
